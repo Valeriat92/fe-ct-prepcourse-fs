@@ -6,6 +6,23 @@ function operadoresLogicos(num1, num2, num3) {
   // Si todos los argumentos son cero, retorna ---> "Error".
   // Si no se cumple ninguna de las condiciones anteriores, retorna false.
   // Tu código:
+  if (num1 === 0 && num2 === 0 && num3 === 0) {
+      return "Error";
+    } if (num1 < 0 || num2 < 0 || num3 < 0){
+    return "Hay negativos"; }
+     if (num1 >0 && num1 > num2 && num1 > num3){
+      return "Numero 1 es mayor y positivo";
+    } if (num3 > num1 && num3 > num2){
+      num3 = num3 + 1;
+      return num3;
+    } else {
+      return false;
+    }
+  
 }
-
+console.log(operadoresLogicos(50, 80, 10)); // false
+console.log(operadoresLogicos(-1, 2, 3));   // "Hay negativos"
+console.log(operadoresLogicos(5, 3, 2));    // "Numero 1 es mayor y positivo"
+console.log(operadoresLogicos(2, 4, 9));    // 10
+console.log(operadoresLogicos(0, 0, 0));    // "Error"
 module.exports = operadoresLogicos;
